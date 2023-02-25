@@ -18,3 +18,7 @@ get_prop(system_server, userspace_reboot_exported_prop)
 get_prop(system_server, exported_camera_prop)
 
 allow system_server sysfs_batteryinfo:dir r_dir_perms;
+
+# 2023-02-24 FWieP
+# fix avc: denied { getattr } for uid=1000 scontext=u:r:system_server:s0 tcontext=u:r:keystore:s0 tclass=process permissive=0
+allow system_server keystore:process getattr;

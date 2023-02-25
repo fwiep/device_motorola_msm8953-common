@@ -38,3 +38,7 @@ allow vendor_init vendor_ssr_prop:property_service set;
 allow vendor_init persist_debug_prop:file read;
 allow vendor_init proc_dirty:file w_file_perms;
 allow vendor_init proc_dirty_ratio:file w_file_perms;
+
+# 2023-02-24 FWieP
+# fix avc: denied { read } for uid=0 name="u:object_r:default_prop:s0" dev="tmpfs" ino=15667 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
+allow vendor_init default_prop:file read;
